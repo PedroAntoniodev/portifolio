@@ -3,12 +3,23 @@ import Paragrafo from '../Paragrafo'
 
 import { Card, LinkBotao } from './style'
 
-const Projeto = () => (
+export type Props = {
+  titulo: string
+  descricao: string
+  linkGithub: string
+  linkVercel: string
+}
+
+const Projeto = ({ titulo, descricao, linkGithub, linkVercel }: Props) => (
   <Card>
-    <Titulo>Projeto Lista de tarefas</Titulo>
-    <Paragrafo tipo="secundario">Lista de tarefas feita com VueJs</Paragrafo>
-    <LinkBotao>Visualizar</LinkBotao>
+    <Titulo>{titulo}</Titulo>
+    <Paragrafo tipo="secundario">{descricao}</Paragrafo>
+    <LinkBotao href={linkGithub} target="_blank" rel="noopener noreferrer">
+      Visualizar no Github
+    </LinkBotao>
+    <LinkBotao href={linkVercel} target="_blank" rel="noopener noreferrer">
+      Visualizar na Vercel
+    </LinkBotao>
   </Card>
 )
-
 export default Projeto
